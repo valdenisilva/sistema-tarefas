@@ -1,4 +1,10 @@
 sistema web de gestao de tarefas
+
+Atores: 
+Valdeni 202220905
+Lucas
+Bruno
+
 projeto inicial para organizacao de tarefas da aula de laboratorio de back end
 pre requisitos
 install python 3 instalado.
