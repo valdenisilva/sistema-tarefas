@@ -13,7 +13,7 @@ chamado_2 = {
     "id": 2,
     "titulo": "impressora sem conexao",
     "prioridade": "media",
-    "situacoa": "em atendimento",
+    "situacao": "em atendimento",
     "categoria": "hardware"
 }
 
@@ -26,7 +26,7 @@ chamado_3 = {
 }
 
 chamado_4 ={
-    "id": "4",
+    "id": 4,
     "titulo": "travando o sistema",
     "prioridade": "",
     "situacao": "concruida",
@@ -34,15 +34,16 @@ chamado_4 ={
 }
 
 chamado_5 ={
-    "id": "5",
+    "id": 5,
     "titulo": "muita marisia",
     "prioridade": "baixa",
-    "situacao": "aguardando fidback do criente",
-    "categoria": "pecimo estado"
+    "situacao": "aguardando feedback do criente",
+    "categoria": "pessimo estado"
  }
 
-lista = [chamado_1, chamado_2]
+lista = [chamado_1, chamado_2, chamado_3, chamado_4, chamado_5]
 print(type(chamado_1))
+print(type(chamado_2))
 
 tarefas = []
 proximo_id = 1
@@ -62,12 +63,12 @@ while True:
         else:
             prioridade = input("prioridade (baixa, media ou alta):").lower()
             if prioridade != "baixa" and prioridade != "media" and prioridade != "alta":
-                print("prioridade einvalida")
+                print("prioridade invalida")
             else:
                 categoria = input("categoria da tarefa: ").strip().lower()
                 prazo_horas = float(input("prazo estimado em horas: "))
 
-                resposta_urgente = input("urgent (sin/nao)").lower()
+                resposta_urgente = input("urgent (sim/nao)").lower()
                 urgente = resposta_urgente == "sim"
                 esforco = 1.5
                 esforco_estimado = (prazo_horas * esforco)
@@ -90,6 +91,7 @@ while True:
                 print(f"tarefa {proximo_id} cadastrado com sucesso")
 
                 proximo_id = proximo_id + 1
+
     elif opcao == "2":
                 print()
                 print("lista de tarefas")
@@ -98,28 +100,29 @@ while True:
                 else:
                     for tarefa in tarefas:
                         print()
-                        print(f"id: {tarefa["id"]}")
-                        print(f"titulo: {tarefa["titulo"]}")
-                        print(f"prioridade: {tarefa["prioridade"]}")
-                        print(f"categoria: {tarefa["categoria"]}")
-                        print(f"situacao: {tarefa["situacao"]}")
+                        print(f"id: {tarefa['id']}")
+                        print(f"titulo: {tarefa['titulo']}")
+                        print(f"prioridade: {tarefa['prioridade']}")
+                        print(f"categoria: {tarefa['categoria']}")
+                        print(f"situacao: {tarefa['situacao']}")
 
-                        print(f"prazo: {tarefa["prazo"]:.2f} horas")
-                        print(f"esforco estimado: {tarefa["esforco"]:.2f} horas")
-                        print(f"urgent: {tarefa["urgente"]}")
-                        print(f"prioridade: {tarefa["prioridade"]}")
+                        print(f"prazo: {tarefa['prazo']:.2f} horas")
+                        print(f"esforco estimado: {tarefa['esforco']:.2f} horas")
+                        print(f"urgent: {tarefa['urgente']}")
+                        print(f"prioridade: {tarefa['prioridade']}")
 
                         print("xxxxxxxxxxxxxxxxxxxxxxxxx")
+
     elif opcao == "3":
         situacao_desejada = input("situacao desejada: ").strip().lower()
         encontrou_tarefa = False
         for tarefa in tarefas:
             if tarefa["situacao"] == situacao_desejada:
                 print()
-                print(f"id: {tarefa["id"]}")
-                print(f"titulo: {tarefa["titulo"]}")
-                print(f"prioridade: {tarefa["prioridade"]}")
-                print(f"categoria: {tarefa["categoria"]}")
+                print(f"id: {tarefa['id']}")
+                print(f"titulo: {tarefa['titulo']}")
+                print(f"prioridade: {tarefa['prioridade']}")
+                print(f"categoria: {tarefa['categoria']}")
 
                 encontrou_tarefa = True
             if encontrou_tarefa == False:
@@ -128,19 +131,20 @@ while True:
     elif opcao == "4":
         numero = input("informe o id da tarefa que deseja: ")
         if numero.isdigit():
-            id_situacao =int(numero)
+            id_procurado =int(numero)
             nova_situacao = input("nova situacao: ").strip().lower()
             id_procurado = True
-        for tarefa in tarefas:
-            if tarefa["id"] == id_procurado:
-                tarefa["situacao"] = nova_situacao
-                encontrou_tarefa = True
-                print("situacao atualisada com sucesso")
-                break
+            for tarefa in tarefas:
+                if tarefa["id"] == id_procurado:
+                    tarefa["situacao"] = nova_situacao
+                    encontrou_tarefa = True
+                    print("situacao atualisada com sucesso")
+                    break
             if encontrou_tarefa == False:
                 print("A tarefa nao foi encontrada")                        
-            else:
-                print("id invalido tente novamente")
+        else:
+            print("id invalido tente novamente")
+
     elif opcao == "5":
         categorias = set()
         for tarefa in tarefas:
