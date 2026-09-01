@@ -2,24 +2,44 @@ chamadas = []
 chamado_1 = {
     "id": 1,
     "titulo": "computador nao iniciado",
+    "prioridade": "alta",
     "situacao": "aberto",
-    "responsavel": "juao"
+    "categoria": "acesso"
 }
 
 print(type(chamado_1))
 
 chamado_2 = {
     "id": 2,
-    "situacoa": "em andamento",
-    "responsavel": "maria"
+    "titulo": "impressora sem conexao",
+    "prioridade": "media",
+    "situacoa": "em atendimento",
+    "categoria": "hardware"
 }
 
 chamado_3 = {
     "id": 3,
+    "titulo": "",
+    "prioridade": 'baixa',
     "situacao": "",
-    "responsavel": "antonio",
-    "urgente": False
+    "categoria": "em analise",
 }
+
+chamado_4 ={
+    "id": "4",
+    "titulo": "travando o sistema",
+    "prioridade": "",
+    "situacao": "concruida",
+    "categoria": "software"
+}
+
+chamado_5 ={
+    "id": "5",
+    "titulo": "muita marisia",
+    "prioridade": "baixa",
+    "situacao": "aguardando fidback do criente",
+    "categoria": "pecimo estado"
+ }
 
 lista = [chamado_1, chamado_2]
 print(type(chamado_1))
@@ -110,7 +130,6 @@ while True:
         if numero.isdigit():
             id_situacao =int(numero)
             nova_situacao = input("nova situacao: ").strip().lower()
-#####
             id_procurado = True
         for tarefa in tarefas:
             if tarefa["id"] == id_procurado:
@@ -135,7 +154,7 @@ while True:
                 print(f"{categoria}")
     elif opcao == "6":
         print()
-        print("O sistema foi ncerrado")
+        print("O sistema foi encerrado")
         break
     else:
         print("Opcao invalida tente outra opcao")
