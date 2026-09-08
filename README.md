@@ -2,8 +2,10 @@ sistema web de gestao de tarefas
 
 Atores: 
 Valdeni 202220905
+
 Lucas
-Bruno
+
+Bruno Goulart dos Santos 202422712
 
 projeto inicial para organizacao de tarefas da aula de laboratorio de back end
 pre requisitos
