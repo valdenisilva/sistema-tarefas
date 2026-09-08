@@ -1,5 +1,10 @@
 controle de tarefas
-altores: valdeni 202220905, Lucas, Bruno
+altores: valdeni 202220905, 
+
+Lucas, 
+
+Bruno Goulart dos Santos 202422712
+
 
 oobgetivo e cadastrar e visualizar registros de terefas
 projeto inicial para organizacao de tarefas da aula do laboratorio de back end

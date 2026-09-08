@@ -31,6 +31,7 @@ def Dellete(registros):
             print("registro removido com sucesso")
         else:
             print("indice invalido")
+            
 
 # faz parte dos codigos comentados na class e no servico.py
 

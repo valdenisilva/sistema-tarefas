@@ -24,6 +24,7 @@ while True:
         break
     else:
         print("Opção inválida, tente novamente.")
+        
 
 # para testar este, descomente este trexo e a class tarefa
 

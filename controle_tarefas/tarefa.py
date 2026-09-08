@@ -17,6 +17,7 @@ class Tarefa:
             pass
         def Dellete(registros):
             pass
+        
 
 # este trexo fas parte do trecho comentado em servicos.py
 
