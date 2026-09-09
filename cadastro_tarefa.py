@@ -7,7 +7,7 @@ def criar_cadastro_tarefa():
     prioridade = int(input("Prioridade (1 a 5): "))
     prazo_horas = float(input("Prazo estimado em horas: "))
 
-    resposta_urgencia = input("A tarefa é urgente? (sim/nao): ").
+    resposta_urgencia = input("A tarefa é urgente? (sim/nao): ")
     urgente = resposta_urgencia == "sim"
 
     fator_esforco = 1.2
